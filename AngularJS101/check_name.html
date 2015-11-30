@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	
+</head>
+<body ng-app="inputExample" ng-controller="ExampleController" >
+	<script src="angular1.4.js"></script>
+	<script>
+		angular.module('inputExample', [])
+		.controller('ExampleController', ['$scope', function($scope) {
+			$scope.val_name = '';
+
+			$scope.output_msg = "";
+
+			$scope.check_name = function(){
+				if( $scope.val_name === 'WYJ' ){
+					$scope.output_msg = "Hello " + $scope.val_name;
+				}else{
+					$scope.output_msg = "";	
+				}
+			};
+
+
+			
+		}]);
+	</script>
+	
+	
+	<form name="testForm" >
+		
+		Name: 
+		<input ng-model="val_name"  name="val_name" ng-change="check_name()" />  
+		<br/><br/>
+		{{output_msg}}
+	</form>
+</body>
+</html>

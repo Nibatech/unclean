@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body ng-app="myApp"  >
+
+	<div ng-controller="Ctrl">
+		
+		
+			<br/> <br/> 
+
+			{{list_array[0]}} | currency = {{list_array[0]|currency}} <br/> <br/> 
+			{{list_array[1]}} | uppercase = {{list_array[1]|uppercase}} <br/><br/> 
+			{{list_array[2]}} | date = {{list_array[2]|date}} <br/><br/> 
+			{{list_array[3]}} | json = {{list_array[3]|json}} <br/> <br/> 
+			{{list_array[4]}} | number = {{list_array[4]|number}} <br/><br/> 
+			{{list_array[5]}} | orderBy = {{list_array[5]|orderBy}} <br/><br/> 
+		</div>
+
+		<script src="angular1.4.js"></script>
+		<script type="text/javascript">
+
+			var myApp = angular.module('myApp', []);
+
+			myApp.controller('Ctrl', function ($scope) {
+				$scope.list_array = null;
+				
+				aJson = {"name":"Tom","sex":"male"};
+				$scope.list_array = ['0.1', 'abc', 1111111111111 , aJson, '444444',['Tom','Jack','Larry','Frank']];
+			
+			});
+		</script>
+	</body>
+	</html>
